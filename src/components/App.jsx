@@ -1,16 +1,18 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
-import Movies from '../pages/Movies';
-import MovieDetails from '../pages/MovieDetails';
-import Cast from '../pages/Cast';
-import Reviews from '../pages/Reviews';
-import Navbar from './Navbar'; // Asigură-te că ai acest import corect
+import Navbar from './Navbar';
+
+const Home = React.lazy(() => import('../pages/Home'));
+const Movies = React.lazy(() => import('../pages/Movies'));
+const MovieDetails = React.lazy(() => import('../pages/MovieDetails'));
+const Cast = React.lazy(() => import('../pages/Cast'));
+const Reviews = React.lazy(() => import('../pages/Reviews'));
+const NotFoundPage = React.lazy(() => import('../pages/NotFoundPage'));
 
 const App = () => {
   return (
     <>
-      <Navbar /> {/* Navbar-ul va fi afișat pe toate paginile */}
+      <Navbar />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,7 +21,7 @@ const App = () => {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </>
