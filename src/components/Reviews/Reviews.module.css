@@ -1,0 +1,23 @@
+.reviewsList {
+  padding: 20px;
+}
+
+.reviewsList ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.reviewsList li {
+  margin: 10px 0;
+}
+
+.reviewsList li p {
+  margin: 5px 0;
+}
+
+.noReviews {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #777;
+}

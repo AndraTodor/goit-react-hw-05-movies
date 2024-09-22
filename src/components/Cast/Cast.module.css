@@ -1,0 +1,12 @@
+.castList {
+  padding: 20px;
+}
+
+.castList ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.castList li {
+  margin: 10px 0;
+}
